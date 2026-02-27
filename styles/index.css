@@ -25,7 +25,8 @@
 }
 
 /* --- Base Reset --- */
-html, body {
+html,
+body {
   background: var(--deep-tensor) !important;
   color: var(--iso-white) !important;
   font-family: var(--font-body);
@@ -45,7 +46,10 @@ html, body {
 }
 
 /* --- Headings --- */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   color: var(--iso-white);
   font-weight: 800;
@@ -75,7 +79,8 @@ h3 {
 }
 
 /* --- Body Text --- */
-p, li {
+p,
+li {
   color: var(--iso-white);
   font-size: 1.1rem;
   line-height: 1.7;
@@ -103,13 +108,13 @@ code {
 
 /* --- Lists --- */
 ul {
-  list-style: none;
-  padding-left: 0;
+  list-style: none !important;
+  padding-left: 0 !important;
 }
 
 ul li {
   position: relative;
-  padding-left: 1.6em;
+  padding-left: 1.8em !important;
   margin-bottom: 0.6em;
 }
 
@@ -119,6 +124,7 @@ ul li::before {
   left: 0;
   color: var(--transition-green);
   font-size: 1.2em;
+  line-height: 1;
 }
 
 /* --- Accent Block --- */
@@ -222,7 +228,22 @@ ul li::before {
   transition: all 0.3s ease;
 }
 
-.token-1 { background: rgba(0, 78, 100, 0.4); border-color: var(--cold-data); }
-.token-2 { background: rgba(0, 250, 154, 0.15); border-color: var(--transition-green); }
-.token-3 { background: rgba(93, 46, 140, 0.3); border-color: var(--energy-indigo); }
-.token-4 { background: rgba(214, 140, 69, 0.3); border-color: var(--hot-spot); }
+.token-1 {
+  background: rgba(0, 78, 100, 0.4);
+  border-color: var(--cold-data);
+}
+
+.token-2 {
+  background: rgba(0, 250, 154, 0.15);
+  border-color: var(--transition-green);
+}
+
+.token-3 {
+  background: rgba(93, 46, 140, 0.3);
+  border-color: var(--energy-indigo);
+}
+
+.token-4 {
+  background: rgba(214, 140, 69, 0.3);
+  border-color: var(--hot-spot);
+}
