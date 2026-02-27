@@ -1,0 +1,228 @@
+/* ============================================
+   BRAND BOOK — Global Design Tokens & Styles
+   ============================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* --- Design Tokens --- */
+:root {
+  /* Primary */
+  --deep-tensor: #0F1123;
+  --iso-white: #E6E8F0;
+  --iso-white-muted: #A0A3B5;
+
+  /* Accent Gradient Stops */
+  --cold-data: #004E64;
+  --transition-green: #00FA9A;
+  --energy-indigo: #5D2E8C;
+  --hot-spot: #D68C45;
+
+  /* Typography */
+  --font-heading: 'Manrope', 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* --- Base Reset --- */
+html, body {
+  background: var(--deep-tensor) !important;
+  color: var(--iso-white) !important;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Slidev Overrides --- */
+.slidev-layout {
+  background: transparent !important;
+  color: var(--iso-white);
+  font-family: var(--font-body);
+}
+
+.slidev-page {
+  background: var(--deep-tensor) !important;
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--iso-white);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+h1 {
+  font-size: 2.8rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--transition-green), var(--energy-indigo), var(--hot-spot));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.25;
+  color: var(--iso-white);
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: var(--iso-white-muted);
+  font-weight: 600;
+}
+
+/* --- Body Text --- */
+p, li {
+  color: var(--iso-white);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+strong {
+  color: var(--transition-green);
+  font-weight: 700;
+}
+
+em {
+  color: var(--hot-spot);
+  font-style: italic;
+}
+
+/* --- Code / Mono --- */
+code {
+  font-family: var(--font-mono) !important;
+  background: rgba(93, 46, 140, 0.2);
+  color: var(--transition-green);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* --- Lists --- */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--transition-green);
+  font-size: 1.2em;
+}
+
+/* --- Accent Block --- */
+.accent-block {
+  background: linear-gradient(135deg, rgba(0, 78, 100, 0.3), rgba(93, 46, 140, 0.2));
+  border-left: 3px solid var(--transition-green);
+  padding: 1.2em 1.5em;
+  border-radius: 0 12px 12px 0;
+  backdrop-filter: blur(8px);
+}
+
+/* --- Gradient Text Utility --- */
+.gradient-text {
+  background: linear-gradient(135deg, var(--cold-data), var(--transition-green), var(--energy-indigo), var(--hot-spot));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Glowing Dot --- */
+.glow-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--transition-green);
+  box-shadow: 0 0 12px var(--transition-green), 0 0 30px rgba(0, 250, 154, 0.3);
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+/* --- Card --- */
+.card {
+  background: rgba(230, 232, 240, 0.04);
+  border: 1px solid rgba(230, 232, 240, 0.08);
+  border-radius: 16px;
+  padding: 1.5em;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(0, 250, 154, 0.3);
+  box-shadow: 0 0 30px rgba(0, 250, 154, 0.08);
+}
+
+/* --- v-click animations (override default) --- */
+.slidev-vclick-target {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slidev-vclick-hidden {
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(4px);
+}
+
+/* --- Slide Transitions --- */
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-left-enter-from {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+/* --- Number/Stat Highlight --- */
+.stat {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--transition-green), var(--hot-spot));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Emoji Icon --- */
+.icon-lg {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+/* --- Token Visualization --- */
+.token {
+  display: inline-block;
+  padding: 0.3em 0.6em;
+  margin: 0.2em;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  border: 1px solid rgba(230, 232, 240, 0.15);
+  transition: all 0.3s ease;
+}
+
+.token-1 { background: rgba(0, 78, 100, 0.4); border-color: var(--cold-data); }
+.token-2 { background: rgba(0, 250, 154, 0.15); border-color: var(--transition-green); }
+.token-3 { background: rgba(93, 46, 140, 0.3); border-color: var(--energy-indigo); }
+.token-4 { background: rgba(214, 140, 69, 0.3); border-color: var(--hot-spot); }
